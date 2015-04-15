@@ -1,8 +1,0 @@
-<%= form_for([:admin, @dashboard_widget], url: admin_dashboard_dashboard_widget_path(@dashboard, @widget), :html => {:id=>"form_dashboard_widget", :class=>"mb-0 form-horizontal", :role => "form", :method =>  :patch, :remote=>true}) do |f| %>
-Jira URL:<%= f.text_field :jira_url %><br>
-Jira View ID:<%= f.text_field :jira_view_id %><br>
-Jira Name:<%= f.text_field :jira_name %><br>
-Jira Password:<%= f.text_field :jira_password %><br>
-Jira Project Key:<%= f.text_field :jira_project_key %>
-<%= f.submit "Submit" %><br>
-<% end %>

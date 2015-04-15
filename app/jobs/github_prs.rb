@@ -1,6 +1,5 @@
 require 'octokit'
 
-
 Dashing.scheduler.every '1m', :first_in => 0 do |job|
   unless $dashboard_widget_github.nil?
     client = Octokit::Client.new(:access_token => $dashboard_widget_github.access_token)

@@ -1,7 +1,7 @@
 heading = "Configure Widget";
 <% if @widget.widget_type == "Github" && @widget.name == "Github-Status" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/github/github_status')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/github/github_status'))  %>");
+$('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Github" && @widget.name == "Github-Open-PR" %>
 $('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/github/github'))  %>");
 $('#popup_modal').modal('show');
@@ -15,37 +15,35 @@ $('#popup_modal').modal('show');
 
 
 <% if @widget.widget_type == "Code Climate" && @widget.name == "GPA" %>
-// bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/codeclimate/code_GPA')) %>";
-// showModal(heading, bodyContent);
 $('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/codeclimate/code_GPA'))  %>");
 $('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Code Climate" && @widget.name == "Test-coverage" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/codeclimate/code_testcoverage')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/codeclimate/code_testcoverage'))  %>");
+$('#popup_modal').modal('show');
 <% end %>
 
 
 <% if @widget.widget_type == "Jira" && @widget.name == "To-Do-list" %>
-// bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_assignedtoQA')) %>";
-// showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira'))  %>");
+$('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Assign-to-QA" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira'))  %>");
+$('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Sprint-remaning-days" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintprogress')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira'))  %>");
+$('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "Sprint-progress" %>
-// bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintremaniningdays')) %>";
-// showModal(heading, bodyContent);
-$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_sprintprogress'))  %>");
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira'))  %>");
 $('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "No of open-issues" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_todolist')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues'))  %>");
+$('#popup_modal').modal('show');
+
 <% end %>
 
 
 <% if @widget.widget_type == "Jenkins" && @widget.name == "Build-test" %>
-bodyContent = "<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jenkins/jenkins_buildtest')) %>";
-showModal(heading, bodyContent);
+$('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jenkins/jenkins_buildtest'))  %>");
+$('#popup_modal').modal('show');
+
 <% end %>
