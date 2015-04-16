@@ -38,7 +38,6 @@ $('#popup_modal').modal('show');
 <% elsif @widget.widget_type == "Jira" && @widget.name == "No of open-issues" %>
 $('#popup_modal').html("<%= escape_javascript(render(:partial=>'/admin/dashboard_widgets/jira/jira_noofissues'))  %>");
 $('#popup_modal').modal('show');
-
 <% end %>
 
 

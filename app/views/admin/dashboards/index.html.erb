@@ -8,7 +8,7 @@
     <% elsif $dashboard_widget_code.present? %>
       <a href="/dashing/dashboards?code_api_token=<%= $dashboard_widget_code.code_api_token%>&code_repo_id=<%= $dashboard_widget_code.code_repo_id %>">View As Wallboard</a>
   <% elsif $dashboard_widget_jira.present?  %>
-       <a href="/dashing/dashboards?rapidView=<%= $dashboard_widget_jira.jira_view_id %>&projectKey=<%= $dashboard_widget_jira.jira_project_key %>">View As Wallboard</a>
+       <a href="/dashing/dashboards?rapidView=<%= $dashboard_widget_jira.jira_view_id %>">View As Wallboard</a>
     <% end %>
   <% else %>
     No Dashboard Widgets

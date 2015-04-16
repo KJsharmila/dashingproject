@@ -1,11 +1,15 @@
 require 'jira'
+require 'uri'
 
-Dashing.scheduler.every '2m', :first_in => 0 do |job|
+Dashing.scheduler.every '15s', :first_in => 0 do |job|
+
+  url = "https://qwinix.atlassian.net/secure/RapidBoard.jspa?rapidView=#{$dashboard_widget_jira.jira_view_id}"
+
   unless $dashboard_widget_jira.nil?
     client = JIRA::Client.new({
       :username => $dashboard_widget_jira.jira_name,
       :password => $dashboard_widget_jira.jira_password,
-      :site => "https://qwinix.atlassian.net/secure/RapidBoard.jspa?rapidView=<%= $dashboard_widget_jira.jira_view_id %>&projectKey=<%= $dashboard_widget_jira.jira_project_key %>",
+      :site => url,
       :auth_type => :basic,
       :context_path => ""
     })
